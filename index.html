@@ -48,14 +48,10 @@
   .mdiv { height:1px; background:rgba(201,168,76,0.2); margin:16px 0; }
   .mtotal { display:flex; justify-content:space-between; font-size:17px; font-weight:700; margin-bottom:8px; }
   .mspice { font-size:12px; color:rgba(240,236,228,0.5); margin-bottom:16px; }
-  .form-group { margin-bottom:12px; }
-  .form-label { font-size:12px; color:var(--gold); margin-bottom:5px; display:block; }
-  .mremark { width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:10px; color:var(--cream); font-size:16px; font-family:'Noto Sans TC',sans-serif; resize:vertical; }
+  .mremark { width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:10px; color:var(--cream); font-size:16px; font-family:'Noto Sans TC',sans-serif; resize:vertical; margin-bottom:12px; }
   .mremark::placeholder { color:rgba(255,255,255,0.25); }
-  .mname { width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:10px; color:var(--cream); font-size:16px; font-family:'Noto Sans TC',sans-serif; }
+  .mname { width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:10px; color:var(--cream); font-size:16px; font-family:'Noto Sans TC',sans-serif; margin-bottom:12px; }
   .mname::placeholder { color:rgba(255,255,255,0.25); }
-  .mtime { width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:10px; color:var(--cream); font-size:16px; font-family:'Noto Sans TC',sans-serif; }
-  .mtime::placeholder { color:rgba(255,255,255,0.25); }
   .mbtns { display:flex; gap:10px; }
   .bcancel { flex:1; padding:13px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.15); border-radius:10px; color:var(--cream); font-size:14px; cursor:pointer; font-family:'Noto Sans TC',sans-serif; transition:all 0.3s; }
   .bconfirm { flex:2; padding:13px; background:linear-gradient(135deg,var(--red),#e74c3c); border:none; border-radius:10px; color:#fff; font-size:14px; font-weight:700; cursor:pointer; font-family:'Noto Sans TC',sans-serif; transition:all 0.3s; }
@@ -101,22 +97,8 @@
     <div class="mdiv"></div>
     <div class="mtotal"><span>合計</span><span id="modalTotal" style="color:var(--gold)"></span></div>
     <div class="mspice" id="modalSpice"></div>
-    
-    <div class="form-group">
-      <label class="form-label">👤 稱呼或手機後3碼</label>
-      <input class="mname" id="customerName" placeholder="請輸入您的稱呼或手機後3碼" />
-    </div>
-    
-    <div class="form-group">
-      <label class="form-label">🕐 取餐時間</label>
-      <input class="mtime" id="pickupTime" placeholder="例：立即取餐、10分鐘後、下午3點等" />
-    </div>
-    
-    <div class="form-group">
-      <label class="form-label">📝 其他備註</label>
-      <textarea class="mremark" id="remark" rows="2" placeholder="例：請少冰、加辣、其他特殊需求等"></textarea>
-    </div>
-    
+    <input class="mname" id="customerName" placeholder="請輸入您的稱呼或手機後3碼" />
+    <textarea class="mremark" id="remark" rows="2" placeholder="其他"></textarea>
     <div class="sending-msg" id="sendingMsg"></div>
     <div class="mbtns">
       <button class="bcancel" id="cancelBtn" onclick="hideModal()">返回修改</button>
@@ -257,7 +239,6 @@ function hideModal() { document.getElementById('overlay').classList.remove('show
 
 function confirmOrder() {
   var customerName = document.getElementById('customerName').value.trim();
-  var pickupTime = document.getElementById('pickupTime').value.trim();
   var remark = document.getElementById('remark').value.trim();
   var r = buildOrderLines();
 
@@ -275,9 +256,8 @@ function confirmOrder() {
     orderText += l.name + ' x' + l.qty + '　$' + l.subtotal + '\n';
   });
   orderText += '──────────\n';
-  orderText += '💰 合計：$' + r.total + '\n';
-  if (pickupTime) orderText += '🕐 取餐時間：' + pickupTime + '\n';
-  if (remark) orderText += '📝 備註：' + remark;
+  orderText += '💰 合計：$' + r.total;
+  if (remark) orderText += '\n📝 備註：' + remark;
 
   // Show success screen first
   var detail = orderText.replace(/\n/g, '<br>');
@@ -303,7 +283,6 @@ function resetOrder() {
   qty = {};
   var els = document.querySelectorAll('.cnum');
   for (var i = 0; i < els.length; i++) { els[i].textContent = '0'; els[i].classList.remove('active'); }
-  document.getElementById('pickupTime').value = '';
   document.getElementById('remark').value = '';
   document.getElementById('customerName').value = '';
   document.getElementById('confirmBtn').disabled = false;
