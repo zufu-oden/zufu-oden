@@ -16,11 +16,11 @@
   .spice-bar { padding:12px 16px; background:rgba(255,255,255,0.03); border-bottom:1px solid rgba(255,255,255,0.08); }
   .spice-label { font-size:12px; color:var(--gold); letter-spacing:2px; margin-bottom:8px; }
   .spice-options { display:flex; gap:8px; flex-wrap:wrap; }
-  .spice-btn { padding:5px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.2); background:transparent; color:rgba(240,236,228,0.7); font-size:12px; cursor:pointer; font-family:'Noto Sans TC',sans-serif; }
+  .spice-btn { padding:5px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.2); background:transparent; color:rgba(240,236,228,0.7); font-size:12px; cursor:pointer; font-family:'Noto Sans TC',sans-serif; transition:all 0.3s; }
   .spice-btn.active { background:var(--red); border-color:var(--red); color:#fff; }
   .tabs { display:flex; overflow-x:auto; padding:12px 16px; gap:8px; scrollbar-width:none; border-bottom:1px solid rgba(255,255,255,0.08); }
   .tabs::-webkit-scrollbar { display:none; }
-  .tab { white-space:nowrap; padding:6px 14px; border-radius:20px; border:1px solid rgba(201,168,76,0.3); background:transparent; color:rgba(240,236,228,0.6); font-size:12px; cursor:pointer; font-family:'Noto Sans TC',sans-serif; }
+  .tab { white-space:nowrap; padding:6px 14px; border-radius:20px; border:1px solid rgba(201,168,76,0.3); background:transparent; color:rgba(240,236,228,0.6); font-size:12px; cursor:pointer; font-family:'Noto Sans TC',sans-serif; transition:all 0.3s; }
   .tab.active { background:var(--gold); border-color:var(--gold); color:var(--navy); font-weight:700; }
   .section { padding:0 16px; }
   .sec-hdr { display:flex; align-items:center; gap:10px; padding:20px 0 12px; }
@@ -38,7 +38,7 @@
   .cart-bar { position:fixed; bottom:0; left:0; right:0; padding:12px 16px; background:linear-gradient(180deg,rgba(14,37,64,0.97) 0%,#0a1c30 100%); border-top:1px solid rgba(201,168,76,0.3); z-index:200; }
   .cart-summary { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; font-size:13px; color:rgba(240,236,228,0.6); }
   .cart-total { color:var(--gold); font-weight:700; font-size:18px; }
-  .order-btn { width:100%; padding:14px; background:linear-gradient(135deg,var(--red),#e74c3c); border:none; border-radius:12px; color:#fff; font-size:16px; font-weight:700; letter-spacing:3px; cursor:pointer; font-family:'Noto Sans TC',sans-serif; }
+  .order-btn { width:100%; padding:14px; background:linear-gradient(135deg,var(--red),#e74c3c); border:none; border-radius:12px; color:#fff; font-size:16px; font-weight:700; letter-spacing:3px; cursor:pointer; font-family:'Noto Sans TC',sans-serif; transition:all 0.3s; }
   .order-btn:disabled { background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.3); }
   .overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:300; align-items:flex-end; overflow-y:auto; }
   .overlay.show { display:flex; }
@@ -48,13 +48,17 @@
   .mdiv { height:1px; background:rgba(201,168,76,0.2); margin:16px 0; }
   .mtotal { display:flex; justify-content:space-between; font-size:17px; font-weight:700; margin-bottom:8px; }
   .mspice { font-size:12px; color:rgba(240,236,228,0.5); margin-bottom:16px; }
-  .mremark { width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:10px; color:var(--cream); font-size:16px; font-family:'Noto Sans TC',sans-serif; resize:none; margin-bottom:8px; outline:none; }
+  .form-group { margin-bottom:12px; }
+  .form-label { font-size:12px; color:var(--gold); margin-bottom:5px; display:block; }
+  .mremark { width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:10px; color:var(--cream); font-size:16px; font-family:'Noto Sans TC',sans-serif; resize:vertical; }
   .mremark::placeholder { color:rgba(255,255,255,0.25); }
-  .mname { width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:10px; color:var(--cream); font-size:16px; font-family:'Noto Sans TC',sans-serif; margin-bottom:16px; outline:none; }
+  .mname { width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:10px; color:var(--cream); font-size:16px; font-family:'Noto Sans TC',sans-serif; }
   .mname::placeholder { color:rgba(255,255,255,0.25); }
+  .mtime { width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:10px; color:var(--cream); font-size:16px; font-family:'Noto Sans TC',sans-serif; }
+  .mtime::placeholder { color:rgba(255,255,255,0.25); }
   .mbtns { display:flex; gap:10px; }
-  .bcancel { flex:1; padding:13px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.15); border-radius:10px; color:var(--cream); font-size:14px; cursor:pointer; font-family:'Noto Sans TC',sans-serif; }
-  .bconfirm { flex:2; padding:13px; background:linear-gradient(135deg,var(--red),#e74c3c); border:none; border-radius:10px; color:#fff; font-size:14px; font-weight:700; cursor:pointer; font-family:'Noto Sans TC',sans-serif; letter-spacing:2px; }
+  .bcancel { flex:1; padding:13px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.15); border-radius:10px; color:var(--cream); font-size:14px; cursor:pointer; font-family:'Noto Sans TC',sans-serif; transition:all 0.3s; }
+  .bconfirm { flex:2; padding:13px; background:linear-gradient(135deg,var(--red),#e74c3c); border:none; border-radius:10px; color:#fff; font-size:14px; font-weight:700; cursor:pointer; font-family:'Noto Sans TC',sans-serif; transition:all 0.3s; }
   .bconfirm:disabled { background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.3); }
   .sending-msg { text-align:center; font-size:13px; color:var(--gold); padding:8px 0; min-height:24px; }
   .success { display:none; position:fixed; inset:0; background:var(--navy); z-index:400; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:32px; }
@@ -63,7 +67,7 @@
   .stitle { font-family:'Noto Serif TC',serif; font-size:22px; color:var(--gold); letter-spacing:3px; margin-bottom:12px; }
   .smsg { font-size:14px; color:rgba(240,236,228,0.6); line-height:1.8; margin-bottom:24px; }
   .sdetail { background:rgba(255,255,255,0.05); border-radius:12px; padding:16px; width:100%; max-width:320px; text-align:left; margin-bottom:24px; font-size:13px; line-height:2; }
-  .breset { padding:13px 40px; background:var(--gold); border:none; border-radius:24px; color:var(--navy); font-weight:700; font-size:15px; cursor:pointer; font-family:'Noto Sans TC',sans-serif; letter-spacing:2px; }
+  .breset { padding:13px 40px; background:var(--gold); border:none; border-radius:24px; color:var(--navy); font-weight:700; font-size:15px; cursor:pointer; font-family:'Noto Sans TC',sans-serif; letter-spacing:2px; transition:all 0.3s; }
 </style>
 </head>
 <body>
@@ -97,8 +101,22 @@
     <div class="mdiv"></div>
     <div class="mtotal"><span>合計</span><span id="modalTotal" style="color:var(--gold)"></span></div>
     <div class="mspice" id="modalSpice"></div>
-    <input class="mname" id="customerName" placeholder="請輸入您的稱呼或手機後3碼" />
-    <textarea class="mremark" id="remark" rows="2" placeholder="備註（例：晚點取餐、其他需求等）"></textarea>
+    
+    <div class="form-group">
+      <label class="form-label">👤 稱呼或手機後3碼</label>
+      <input class="mname" id="customerName" placeholder="請輸入您的稱呼或手機後3碼" />
+    </div>
+    
+    <div class="form-group">
+      <label class="form-label">🕐 取餐時間</label>
+      <input class="mtime" id="pickupTime" placeholder="例：立即取餐、10分鐘後、下午3點等" />
+    </div>
+    
+    <div class="form-group">
+      <label class="form-label">📝 其他備註</label>
+      <textarea class="mremark" id="remark" rows="2" placeholder="例：請少冰、加辣、其他特殊需求等"></textarea>
+    </div>
+    
     <div class="sending-msg" id="sendingMsg"></div>
     <div class="mbtns">
       <button class="bcancel" id="cancelBtn" onclick="hideModal()">返回修改</button>
@@ -239,6 +257,7 @@ function hideModal() { document.getElementById('overlay').classList.remove('show
 
 function confirmOrder() {
   var customerName = document.getElementById('customerName').value.trim();
+  var pickupTime = document.getElementById('pickupTime').value.trim();
   var remark = document.getElementById('remark').value.trim();
   var r = buildOrderLines();
 
@@ -256,8 +275,9 @@ function confirmOrder() {
     orderText += l.name + ' x' + l.qty + '　$' + l.subtotal + '\n';
   });
   orderText += '──────────\n';
-  orderText += '💰 合計：$' + r.total;
-  if (remark) orderText += '\n📝 備註：' + remark;
+  orderText += '💰 合計：$' + r.total + '\n';
+  if (pickupTime) orderText += '🕐 取餐時間：' + pickupTime + '\n';
+  if (remark) orderText += '📝 備註：' + remark;
 
   // Show success screen first
   var detail = orderText.replace(/\n/g, '<br>');
@@ -283,6 +303,7 @@ function resetOrder() {
   qty = {};
   var els = document.querySelectorAll('.cnum');
   for (var i = 0; i < els.length; i++) { els[i].textContent = '0'; els[i].classList.remove('active'); }
+  document.getElementById('pickupTime').value = '';
   document.getElementById('remark').value = '';
   document.getElementById('customerName').value = '';
   document.getElementById('confirmBtn').disabled = false;
