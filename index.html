@@ -9,18 +9,18 @@
   :root { --navy:#0e2540; --red:#c0392b; --gold:#c9a84c; --cream:#f0ece4; }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background:var(--navy); color:var(--cream); font-family:'Noto Sans TC',sans-serif; min-height:100vh; padding-bottom:130px; }
-  .header { background:linear-gradient(180deg,#0a1c30 0%,var(--navy) 100%); text-align:center; padding:24px 16px 16px; border-bottom:1px solid rgba(201,168,76,0.3); position:sticky; top:0; z-index:100; }
+  .header { background:linear-gradient(180deg,#0a1c30 0%,var(--navy) 100%); text-align:center; padding:24px 16px 16px; border-bottom:1px solid rgba(201,168,76,0.3); position:sticky; top:0; z-index:200; }
   .header-brand { font-family:'Noto Serif TC',serif; font-size:12px; color:var(--gold); letter-spacing:6px; margin-bottom:4px; }
   .header-title { font-size:22px; font-weight:700; letter-spacing:3px; }
   .header-sub { font-size:10px; color:rgba(240,236,228,0.4); letter-spacing:3px; margin-top:4px; }
   .spice-bar { padding:12px 16px; background:rgba(255,255,255,0.03); border-bottom:1px solid rgba(255,255,255,0.08); }
   .spice-label { font-size:12px; color:var(--gold); letter-spacing:2px; margin-bottom:8px; }
   .spice-options { display:flex; gap:8px; flex-wrap:wrap; }
-  .spice-btn { padding:5px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.2); background:transparent; color:rgba(240,236,228,0.7); font-size:12px; cursor:pointer; font-family:'Noto Sans TC',sans-serif; }
+  .spice-btn { padding:5px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.2); background:transparent; color:rgba(240,236,228,0.7); font-size:12px; cursor:pointer; font-family:'Noto Sans TC',sans-serif; letter-spacing:1px; transition:all 0.3s; }
   .spice-btn.active { background:var(--red); border-color:var(--red); color:#fff; }
   .tabs { display:flex; overflow-x:auto; padding:12px 16px; gap:8px; scrollbar-width:none; border-bottom:1px solid rgba(255,255,255,0.08); }
   .tabs::-webkit-scrollbar { display:none; }
-  .tab { white-space:nowrap; padding:6px 14px; border-radius:20px; border:1px solid rgba(201,168,76,0.3); background:transparent; color:rgba(240,236,228,0.6); font-size:12px; cursor:pointer; font-family:'Noto Sans TC',sans-serif; }
+  .tab { white-space:nowrap; padding:6px 14px; border-radius:20px; border:1px solid rgba(201,168,76,0.3); background:transparent; color:rgba(240,236,228,0.6); font-size:12px; cursor:pointer; font-family:'Noto Sans TC',sans-serif; letter-spacing:1px; transition:all 0.3s; }
   .tab.active { background:var(--gold); border-color:var(--gold); color:var(--navy); font-weight:700; }
   .section { padding:0 16px; }
   .sec-hdr { display:flex; align-items:center; gap:10px; padding:20px 0 12px; }
@@ -35,10 +35,10 @@
   .cbtn.plus { color:var(--gold); }
   .cnum { min-width:28px; text-align:center; font-size:15px; font-weight:700; }
   .cnum.active { color:var(--gold); }
-  .cart-bar { position:fixed; bottom:0; left:0; right:0; padding:12px 16px; background:linear-gradient(180deg,rgba(14,37,64,0.97) 0%,#0a1c30 100%); border-top:1px solid rgba(201,168,76,0.3); z-index:200; }
+  .cart-bar { position:fixed; bottom:0; left:0; right:0; padding:12px 16px; background:linear-gradient(180deg,rgba(14,37,64,0.97) 0%,#0a1c30 100%); border-top:1px solid rgba(201,168,76,0.3); z-index:100; }
   .cart-summary { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; font-size:13px; color:rgba(240,236,228,0.6); }
   .cart-total { color:var(--gold); font-weight:700; font-size:18px; }
-  .order-btn { width:100%; padding:14px; background:linear-gradient(135deg,var(--red),#e74c3c); border:none; border-radius:12px; color:#fff; font-size:16px; font-weight:700; letter-spacing:3px; cursor:pointer; font-family:'Noto Sans TC',sans-serif; }
+  .order-btn { width:100%; padding:14px; background:linear-gradient(135deg,var(--red),#e74c3c); border:none; border-radius:12px; color:#fff; font-size:16px; font-weight:700; letter-spacing:3px; cursor:pointer; font-family:'Noto Sans TC',sans-serif; transition:all 0.3s; }
   .order-btn:disabled { background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.3); }
   .overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:300; align-items:flex-end; overflow-y:auto; }
   .overlay.show { display:flex; }
@@ -48,13 +48,13 @@
   .mdiv { height:1px; background:rgba(201,168,76,0.2); margin:16px 0; }
   .mtotal { display:flex; justify-content:space-between; font-size:17px; font-weight:700; margin-bottom:8px; }
   .mspice { font-size:12px; color:rgba(240,236,228,0.5); margin-bottom:16px; }
-  .mremark { width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:10px; color:var(--cream); font-size:16px; font-family:'Noto Sans TC',sans-serif; resize:none; margin-bottom:8px; outline:none; }
+  .mremark { width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:10px; color:var(--cream); font-size:16px; font-family:'Noto Sans TC',sans-serif; resize:vertical; margin-bottom:12px; }
   .mremark::placeholder { color:rgba(255,255,255,0.25); }
-  .mname { width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:10px; color:var(--cream); font-size:16px; font-family:'Noto Sans TC',sans-serif; margin-bottom:16px; outline:none; }
+  .mname { width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:10px; color:var(--cream); font-size:16px; font-family:'Noto Sans TC',sans-serif; margin-bottom:12px; }
   .mname::placeholder { color:rgba(255,255,255,0.25); }
   .mbtns { display:flex; gap:10px; }
   .bcancel { flex:1; padding:13px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.15); border-radius:10px; color:var(--cream); font-size:14px; cursor:pointer; font-family:'Noto Sans TC',sans-serif; }
-  .bconfirm { flex:2; padding:13px; background:linear-gradient(135deg,var(--red),#e74c3c); border:none; border-radius:10px; color:#fff; font-size:14px; font-weight:700; cursor:pointer; font-family:'Noto Sans TC',sans-serif; letter-spacing:2px; }
+  .bconfirm { flex:2; padding:13px; background:linear-gradient(135deg,var(--red),#e74c3c); border:none; border-radius:10px; color:#fff; font-size:14px; font-weight:700; cursor:pointer; font-family:'Noto Sans TC',sans-serif; }
   .bconfirm:disabled { background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.3); }
   .sending-msg { text-align:center; font-size:13px; color:var(--gold); padding:8px 0; min-height:24px; }
   .success { display:none; position:fixed; inset:0; background:var(--navy); z-index:400; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:32px; }
@@ -164,6 +164,16 @@ function getPriceLabel(sec, item) {
 }
 function makeKey(sid, name) { return sid + '__' + name; }
 
+function formatTime() {
+  var now = new Date();
+  var year = now.getFullYear();
+  var month = String(now.getMonth() + 1).padStart(2, '0');
+  var day = String(now.getDate()).padStart(2, '0');
+  var hours = String(now.getHours()).padStart(2, '0');
+  var minutes = String(now.getMinutes()).padStart(2, '0');
+  return year + '-' + month + '-' + day + ' ' + hours + ':' + minutes;
+}
+
 function changeQty(sid, name, delta) {
   var k = makeKey(sid, name);
   qty[k] = Math.max(0, (qty[k] || 0) + delta);
@@ -248,7 +258,7 @@ function confirmOrder() {
   }
 
   // Build order text
-  var orderText = '🔔 新訂單！\n';
+  var orderText = '🔔 新訂單！' + formatTime() + '\n';
   orderText += '👤 ' + customerName + '\n';
   orderText += '──────────\n';
   orderText += '🌶 辣度：' + currentSpice + '\n';
